@@ -1,18 +1,3 @@
-export type AuthState = {
-  status: "loading" | "authenticated" | "unauthenticated";
-  user: {
-    id: string;
-    role: "member" | "staff" | "admin";
-    gymId?: string;
-  } | null;
-};
-
-export type AuthContextValue = AuthState & {
-  login: (token: string) => Promise<void>;
-  logout: () => Promise<void>;
-  hydrate: () => Promise<void>;
-};
-
 export type AuthStatus = "loading" | "authenticated" | "unauthenticated";
 
 export type AuthUser = {
@@ -21,4 +6,14 @@ export type AuthUser = {
   role: "member" | "staff" | "admin";
   gymId?: string;
   email: string;
+};
+
+export type AuthState = {
+  status: AuthStatus;
+  user: AuthUser | null;
+};
+
+export type AuthContextValue = AuthState & {
+  login: (email: string, password: string) => void;
+  logout: () => void;
 };

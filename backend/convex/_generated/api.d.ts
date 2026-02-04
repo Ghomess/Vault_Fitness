@@ -12,6 +12,7 @@ import type * as functions_accessHistory from "../functions/accessHistory.js";
 import type * as functions_users from "../functions/users.js";
 import type * as functions_workouts from "../functions/workouts.js";
 import type * as types from "../types.js";
+import type * as users from "../users.js";
 import type * as utils_exerciseValidators from "../utils/exerciseValidators.js";
 import type * as utils_guards from "../utils/guards.js";
 
@@ -26,6 +27,7 @@ declare const fullApi: ApiFromModules<{
   "functions/users": typeof functions_users;
   "functions/workouts": typeof functions_workouts;
   types: typeof types;
+  users: typeof users;
   "utils/exerciseValidators": typeof utils_exerciseValidators;
   "utils/guards": typeof utils_guards;
 }>;

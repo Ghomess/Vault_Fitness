@@ -1,6 +1,6 @@
 import { convexQuery } from "../queries";
 import { mapConvexUserToAuthUser } from "../../auth/mapUser";
-import type { AuthUser } from "../../auth/authType";
+import type { AuthUser } from "../../../types/authType";
 import { Doc } from "../../../../../backend/convex/_generated/dataModel";
 
 export const getCurrentUser = async (): Promise<AuthUser | null> => {

@@ -5,11 +5,7 @@ import {
   useMemo,
   useState,
 } from "react";
-import {
-  AuthContextValue,
-  AuthStatus,
-  AuthUser,
-} from "../services/auth/authType";
+import { AuthContextValue, AuthStatus, AuthUser } from "../types/authType";
 import { storage } from "../services/mmkv/mmkv";
 import { authProvider } from "../services/auth/authProvider";
 

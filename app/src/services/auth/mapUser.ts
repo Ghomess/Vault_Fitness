@@ -1,5 +1,5 @@
 import { Doc } from "../../../../backend/convex/_generated/dataModel";
-import { AuthUser } from "./authType";
+import { AuthUser } from "../../types/authType";
 
 export function mapConvexUserToAuthUser(user: Doc<"users">): AuthUser {
   return {

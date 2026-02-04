@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { Button, Text, TextInput } from "react-native";
 import { ScreenStatus } from "../components/ScreenStatus/ScreenStatus";
 import { useAuth } from "../hooks/useAuth";
+import { useTranslation } from "../hooks/useLanguage";
 
 export const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -9,9 +10,11 @@ export const LoginScreen = () => {
   const [error, setError] = useState<string | null>(null);
 
   const { login, status } = useAuth();
+
+  const { t } = useTranslation();
   const onSubmit = () => {
     if (!email || !password) {
-      setError("Email and password are required");
+      setError(t("errors.emailOrPassword"));
     }
     login(email, password);
 
@@ -20,12 +23,12 @@ export const LoginScreen = () => {
 
   return (
     <ScreenStatus loading={status === "loading"}>
-      <Text>Login</Text>
+      <Text>{t("login.title")}</Text>
       {error && <Text>{error}</Text>}
       <TextInput
         autoComplete="email"
         keyboardType="email-address"
-        placeholder="Email"
+        placeholder={t("login.email")}
         value={email}
         onChangeText={setEmail}
         onFocus={() => setError(null)}
@@ -33,15 +36,15 @@ export const LoginScreen = () => {
       <TextInput
         autoComplete="password"
         secureTextEntry
-        placeholder="Password"
+        placeholder={t("login.password")}
         value={password}
         onChangeText={setPassword}
         onFocus={() => setError(null)}
       />
 
-      <Button title="Login" onPress={onSubmit} />
-      <Button title="Continue with Apple" disabled />
-      <Button title="Continue with Google" disabled />
+      <Button title={t("login.button")} onPress={onSubmit} />
+      <Button title={t("login.continueWithApple")} disabled />
+      <Button title={t("login.continueWithGoogle")} disabled />
     </ScreenStatus>
   );
 };

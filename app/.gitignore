@@ -1,0 +1,8 @@
+
+.env.local
+
+.expo/
+
+android/
+
+ios/

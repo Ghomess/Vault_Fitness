@@ -11,6 +11,19 @@ export default {
     title: "Inicio",
     logout: "Cerrar sesión",
   },
+  staff: {
+    title: "Área de personal",
+  },
+  admin: {
+    title: "Área de administración",
+  },
+  auth: {
+    notAuthorizedTitle: "No autorizado",
+    notAuthorizedBody: "No tienes acceso a esta pantalla.",
+    notAuthorized: {
+      goBack: "Volver",
+    },
+  },
   errors: {
     required: "Este campo es obligatorio",
     emailOrPassword: "Correo electrónico o contraseña inválidos",

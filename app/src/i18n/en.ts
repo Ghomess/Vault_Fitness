@@ -11,6 +11,19 @@ export default {
     title: "Home",
     logout: "Log out",
   },
+  staff: {
+    title: "Staff Area",
+  },
+  admin: {
+    title: "Admin Area",
+  },
+  auth: {
+    notAuthorizedTitle: "Not authorized",
+    notAuthorizedBody: "You don't have access to this screen.",
+    notAuthorized: {
+      goBack: "Go back",
+    },
+  },
   errors: {
     required: "This field is required",
     emailOrPassword: "Invalid email or password",

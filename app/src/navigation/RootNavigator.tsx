@@ -4,11 +4,13 @@ import { AppStack } from "./AppStack";
 import { useAuth } from "../hooks/useAuth";
 
 export function RootNavigator() {
-  const { status } = useAuth();
+  const { status, user } = useAuth();
+
+  const isAuthenticated = status === "authenticated" && user;
 
   return (
     <NavigationContainer>
-      {status === "authenticated" ? <AppStack /> : <AuthStack />}
+      {isAuthenticated ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }
